@@ -6,7 +6,4 @@ description: This is the description
 ---
 Tester!
 
-```js
-// you can write JSX in your Markdown!
 <button>test</button>
-```
