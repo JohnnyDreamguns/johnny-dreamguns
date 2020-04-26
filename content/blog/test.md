@@ -5,3 +5,8 @@ title: Test
 description: This is the description
 ---
 Test
+
+```js
+// you can write JSX in your Markdown!
+<button>test</button>
+```
