@@ -2,8 +2,8 @@ module.exports = {
   siteMetadata: {
     title: `Johnny Dreamguns`,
     author: `Johnny Dreamguns`,
-    description: `All about synth rock act Johnny Dreamguns`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    description: `Website all about synth-rock act Johnny Dreamguns`,
+    siteUrl: `https://www.johnnydreamguns.com/`,
     social: {
       twitter: ``,
     },
@@ -21,6 +21,13 @@ module.exports = {
       options: {
         path: `${__dirname}/content/blog`,
         name: `blog`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/song`,
+        name: `song`,
       },
     },
     {

@@ -63,7 +63,7 @@ export const pageQuery = graphql`
     }
     allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { contentType: { eq: "news" } } }
+      filter: { frontmatter: { contentType: { eq: "song" } } }
     ) {
       edges {
         node {

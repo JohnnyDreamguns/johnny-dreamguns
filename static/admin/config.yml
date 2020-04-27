@@ -11,6 +11,29 @@ collections:
     folder: content/blog
     create: true
     fields:
+      - {
+          label: "Content Type",
+          name: "contentType",
+          widget: "select",
+          options: ["news", "song"],
+        }
+      - { name: path, label: Path }
+      - { name: date, label: Date, widget: date }
+      - { name: title, label: Title }
+      - { name: description, label: Description }
+      - { name: body, label: Body, widget: markdown }
+
+  - name: songs
+    label: Songs
+    folder: content/song
+    create: true
+    fields:
+      - {
+          label: "Content Type",
+          name: "contentType",
+          widget: "select",
+          options: ["news", "song"],
+        }
       - { name: path, label: Path }
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
