@@ -6,5 +6,3 @@ title: Test
 description: This is the description
 ---
 Tester!
-
-<button>test</button>
