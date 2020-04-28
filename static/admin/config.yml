@@ -25,7 +25,7 @@ collections:
 
   - name: songs
     label: Songs
-    folder: content/song
+    folder: content/songs
     create: true
     fields:
       - {
