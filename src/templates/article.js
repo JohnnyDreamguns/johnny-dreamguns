@@ -6,11 +6,10 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 
-class BlogPostTemplate extends React.Component {
+class Article extends React.Component {
   render() {
     const post = this.props.data.mdx
     const siteTitle = this.props.data.site.siteMetadata.title
-    const { previous, next } = this.props.pageContext
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -35,10 +34,10 @@ class BlogPostTemplate extends React.Component {
   }
 }
 
-export default BlogPostTemplate
+export default Article
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query ArticlesBySlug($slug: String!) {
     site {
       siteMetadata {
         title

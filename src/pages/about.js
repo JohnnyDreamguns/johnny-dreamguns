@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
-const Songs = props => {
+const About = props => {
   const { data } = props
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMdx.edges
@@ -42,7 +42,7 @@ const Songs = props => {
   )
 }
 
-export default Songs
+export default About
 
 export const pageQuery = graphql`
   query {
@@ -53,7 +53,7 @@ export const pageQuery = graphql`
     }
     allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { contentType: { eq: "song" } } }
+      filter: { frontmatter: { contentType: { eq: "news" } } }
     ) {
       edges {
         node {
