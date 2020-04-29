@@ -43,7 +43,6 @@ const H1 = styled.h1`
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "Roboto Slab";
   font-weight: 400;
   text-transform: uppercase;
   z-index: 10;

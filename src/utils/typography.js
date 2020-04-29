@@ -3,6 +3,7 @@ const typography = new Typography({
   baseFontSize: "18px",
   baseLineHeight: 1.666,
   headerFontFamily: [
+    "Roboto Slab",
     "Avenir Next",
     "Helvetica Neue",
     "Segoe UI",

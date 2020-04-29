@@ -92,22 +92,5 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    {
-      resolve: `gatsby-plugin-google-fonts-v2`,
-      options: {
-        fonts: [
-          {
-            family: "Roboto Slab",
-            variable: true,
-            weights: ["400"],
-          },
-          {
-            family: "Roboto",
-            variable: true,
-            weights: ["latin"],
-          },
-        ],
-      },
-    },
   ],
 }
