@@ -93,20 +93,18 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts-v2`,
       options: {
         fonts: [
           {
-            family: `Roboto Mono`,
-            variants: [`400`, `700`],
+            family: "Roboto Slab",
+            variable: true,
+            weights: ["400"],
           },
           {
-            family: `Roboto`,
-            subsets: [`latin`],
-          },
-          {
-            family: `Roboto Slab`,
-            subsets: [`latin`],
+            family: "Roboto",
+            variable: true,
+            weights: ["latin"],
           },
         ],
       },
