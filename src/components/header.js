@@ -43,10 +43,11 @@ const H1 = styled.h1`
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: "Roboto Slab", serif;
   font-weight: 400;
   text-transform: uppercase;
   z-index: 10;
-  text-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
+  text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
 
   span:nth-child(1) {
     color: #fff;
@@ -89,7 +90,7 @@ const LittleDG = styled.div`
 
   display: none;
 
-  @media (min-width: 450px) and (min-height: 500px) {
+  @media (min-width: 580px) and (min-height: 500px) {
     display: block;
   }
 
