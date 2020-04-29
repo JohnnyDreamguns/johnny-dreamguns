@@ -26,14 +26,16 @@ const InnerWrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  background: url(/images/spacebg.jpg) no-repeat;
+  background: url(/images/spacebg-small.jpg) no-repeat;
   min-height: 200px;
   min-width: 300px;
   background-position: top center;
   position: relative;
   max-width: 1200px;
 
-  @media (min-width: 450px) and (min-height: 500px) {
+  @media (min-width: 580px) and (min-height: 500px) {
+    background: url(/images/spacebg.jpg) no-repeat;
+    background-position: top center;
     min-height: 530px;
   }
 `
@@ -83,15 +85,23 @@ const BigDG = styled.div`
 `
 
 const LittleDG = styled.div`
-  background: url(/images/littledg.png) no-repeat;
-  width: 566px;
-  height: 452px;
   position: absolute;
-
-  display: none;
+  background: url(/images/littledg-small.png) no-repeat;
+  width: 242px;
+  height: 285px;
+  background-size: 66%;
+  right: 0;
+  top: 10px;
+  background-position: right top;
 
   @media (min-width: 580px) and (min-height: 500px) {
-    display: block;
+    background: url(/images/littledg.png) no-repeat;
+    width: 566px;
+    height: 452px;
+    background-size: initial;
+    right: initial;
+    top: initial;
+    background-position: initial;
   }
 
   @media (min-width: 1100px) {
