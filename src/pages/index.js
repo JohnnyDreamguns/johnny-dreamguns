@@ -3,6 +3,8 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import H2 from "../components/h2"
+import Paragraph from "../components/paragraph"
 
 const Index = props => {
   const { data } = props
@@ -13,15 +15,24 @@ const Index = props => {
     <Layout location={props.location} title={siteTitle}>
       <SEO title="All posts" />
 
+      <H2>NEWS</H2>
+
       <div style={{ margin: "20px 0 40px" }}>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
             <div key={node.fields.slug}>
               <h3>
-                <Link style={{ boxShadow: `none` }} to={`${node.fields.slug}`}>
-                  {title}
-                </Link>
+                {node.frontmatter.description.length > 0 ? (
+                  <Link
+                    style={{ boxShadow: `none` }}
+                    to={`${node.fields.slug}`}
+                  >
+                    {title}
+                  </Link>
+                ) : (
+                  <span>{title}</span>
+                )}
               </h3>
               <small>{node.frontmatter.date}</small>
               <p
@@ -60,6 +71,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            contentType
           }
         }
       }

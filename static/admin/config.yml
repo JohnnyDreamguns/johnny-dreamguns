@@ -20,7 +20,12 @@ collections:
       - { name: path, label: Path }
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
-      - { name: description, label: Description }
+      - {
+          name: description,
+          label: Description,
+          widget: markdown,
+          required: false,
+        }
       - { name: body, label: Body, widget: markdown }
 
   - name: songs
@@ -37,5 +42,10 @@ collections:
       - { name: path, label: Path }
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
-      - { name: description, label: Description }
+      - {
+          name: description,
+          label: Description,
+          widget: markdown,
+          required: false,
+        }
       - { name: body, label: Body, widget: markdown }

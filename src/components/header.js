@@ -1,7 +1,8 @@
 import React from "react"
 import styled from "styled-components"
+import Nav from "./nav"
 
-const Header = () => (
+const Header = props => (
   <Wrapper>
     <InnerWrapper>
       <H1>
@@ -9,6 +10,7 @@ const Header = () => (
       </H1>
       <BigDG />
       <LittleDG />
+      <Nav location={props.location} contentType={props.contentType} />
     </InnerWrapper>
   </Wrapper>
 )
@@ -23,6 +25,7 @@ const Wrapper = styled.div`
 
 const InnerWrapper = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -49,13 +52,13 @@ const H1 = styled.h1`
   font-weight: 400;
   text-transform: uppercase;
   z-index: 10;
-  text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
 
   span:nth-child(1) {
     color: #fff;
     font-size: 30px;
 
-    @media (min-width: 450px) {
+    @media (min-width: 580px) {
       font-size: 34px;
     }
   }
@@ -64,7 +67,7 @@ const H1 = styled.h1`
     color: #ff2d4b;
     font-size: 40px;
 
-    @media (min-width: 450px) {
+    @media (min-width: 580px) {
       font-size: 60px;
     }
   }

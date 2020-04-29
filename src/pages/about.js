@@ -1,41 +1,40 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import H2 from "../components/h3"
+import Paragraph from "../components/paragraph"
+import Anchor from "../components/anchor"
 
-const About = props => {
-  const { data } = props
-  const siteTitle = data.site.siteMetadata.title
-  const posts = data.allMdx.edges
+const About = props => (
+  <Layout location={props.location} title="About">
+    <SEO title="All posts" />
 
-  return (
-    <Layout location={props.location} title={siteTitle}>
-      <SEO title="All posts" />
+    <div>
+      <H2>ABOUT</H2>
 
-      <div style={{ margin: "20px 0 40px" }}>
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
-          return (
-            <div key={node.fields.slug}>
-              <h3>
-                <Link style={{ boxShadow: `none` }} to={`${node.fields.slug}`}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </div>
-          )
-        })}
-      </div>
-    </Layout>
-  )
-}
+      <Paragraph>
+        After many years of dedicated service to{" "}
+        <Anchor href="https://www.theplaguedoctors.com">
+          The Plague Doctors
+        </Anchor>
+        , Johnny Dreamguns has set off on his own musical adventure.
+      </Paragraph>
+
+      <Paragraph>
+        Operating from a subterranean base in Manchester dubbed the Kastle
+        Inkredible, he brings you his own unique low budget brand of synth rock.
+      </Paragraph>
+
+      <Paragraph>
+        For the moment all new material will be uploaded to this website as live
+        performance videos, once there is enough stuff the songs will likely be
+        available as a new album, stay tuned!
+      </Paragraph>
+    </div>
+  </Layout>
+)
 
 export default About
 

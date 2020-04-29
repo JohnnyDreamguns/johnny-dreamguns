@@ -5,29 +5,31 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-class Article extends React.Component {
-  render() {
-    const post = this.props.data.mdx
-    const siteTitle = this.props.data.site.siteMetadata.title
+const Article = props => {
+  const post = props.data.mdx
+  const siteTitle = props.data.site.siteMetadata.title
 
-    return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <SEO
-          title={post.frontmatter.title}
-          description={post.frontmatter.description || post.excerpt}
-        />
-        <h1>{post.frontmatter.title}</h1>
-        <p
-          style={{
-            display: `block`,
-          }}
-        >
-          {post.frontmatter.date}
-        </p>
-        <MDXRenderer>{post.body}</MDXRenderer>
-      </Layout>
-    )
-  }
+  return (
+    <Layout
+      location={props.location}
+      contentType={post.frontmatter.contentType}
+      title={siteTitle}
+    >
+      <SEO
+        title={post.frontmatter.title}
+        description={post.frontmatter.description || post.excerpt}
+      />
+      <h1>{post.frontmatter.title}</h1>
+      <p
+        style={{
+          display: `block`,
+        }}
+      >
+        {post.frontmatter.date}
+      </p>
+      <MDXRenderer>{post.body}</MDXRenderer>
+    </Layout>
+  )
 }
 
 export default Article
@@ -48,6 +50,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        contentType
       }
     }
   }

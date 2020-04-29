@@ -2,6 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
+import H2 from "../components/h2"
 import SEO from "../components/seo"
 
 const Songs = props => {
@@ -9,9 +10,13 @@ const Songs = props => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMdx.edges
 
+  console.log(posts)
+
   return (
     <Layout location={props.location} title={siteTitle}>
       <SEO title="All posts" />
+
+      <H2>SONGS</H2>
 
       <div style={{ margin: "20px 0 40px" }}>
         {posts.map(({ node }) => {
@@ -19,9 +24,16 @@ const Songs = props => {
           return (
             <div key={node.fields.slug}>
               <h3>
-                <Link style={{ boxShadow: `none` }} to={`${node.fields.slug}`}>
-                  {title}
-                </Link>
+                {node.frontmatter.description.length > 0 ? (
+                  <Link
+                    style={{ boxShadow: `none` }}
+                    to={`${node.fields.slug}`}
+                  >
+                    {title}
+                  </Link>
+                ) : (
+                  <span>{title}</span>
+                )}
               </h3>
               <small>{node.frontmatter.date}</small>
               <p
