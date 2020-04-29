@@ -92,5 +92,24 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Roboto Mono`,
+            variants: [`400`, `700`],
+          },
+          {
+            family: `Roboto`,
+            subsets: [`latin`],
+          },
+          {
+            family: `Roboto Slab`,
+            subsets: [`latin`],
+          },
+        ],
+      },
+    },
   ],
 }
