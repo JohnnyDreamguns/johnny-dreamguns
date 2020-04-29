@@ -61,7 +61,7 @@ const Wrapper = styled.nav`
   position: absolute;
   bottom: 10px;
 
-  @media (min-width: 580px) {
+  @media (min-width: 580px) and (min-height: 500px) {
     bottom: 20px;
   }
 
@@ -77,7 +77,7 @@ const Wrapper = styled.nav`
     font-family: "Roboto Slab", serif;
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
 
-    @media (min-width: 580px) {
+    @media (min-width: 580px) and (min-height: 500px) {
       font-size: 23px;
     }
   }

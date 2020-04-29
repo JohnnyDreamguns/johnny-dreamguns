@@ -58,7 +58,7 @@ const H1 = styled.h1`
     color: #fff;
     font-size: 30px;
 
-    @media (min-width: 580px) {
+    @media (min-width: 580px) and (min-height: 500px) {
       font-size: 34px;
     }
   }
@@ -67,7 +67,7 @@ const H1 = styled.h1`
     color: #ff2d4b;
     font-size: 40px;
 
-    @media (min-width: 580px) {
+    @media (min-width: 580px) and (min-height: 500px) {
       font-size: 60px;
     }
   }
