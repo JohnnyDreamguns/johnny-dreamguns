@@ -3,6 +3,8 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import H2 from "../components/h2"
+import H3 from "../components/h3"
+import Paragraph from "../components/paragraph"
 import SEO from "../components/seo"
 
 const Songs = props => {
@@ -23,7 +25,7 @@ const Songs = props => {
           const title = node.frontmatter.title || node.fields.slug
           return (
             <div key={node.fields.slug}>
-              <h3>
+              <H3>
                 {node.frontmatter.description.length > 0 ? (
                   <Link
                     style={{ boxShadow: `none` }}
@@ -34,9 +36,8 @@ const Songs = props => {
                 ) : (
                   <span>{title}</span>
                 )}
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p
+              </H3>
+              <Paragraph
                 dangerouslySetInnerHTML={{
                   __html: node.frontmatter.description || node.excerpt,
                 }}

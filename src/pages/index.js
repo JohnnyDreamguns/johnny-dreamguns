@@ -1,9 +1,9 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import H2 from "../components/h2"
+import H3 from "../components/h3"
 import Paragraph from "../components/paragraph"
 
 const Index = props => {
@@ -22,20 +22,22 @@ const Index = props => {
           const title = node.frontmatter.title || node.fields.slug
           return (
             <div key={node.fields.slug}>
-              <h3>
+              <H3>
                 {node.frontmatter.description.length > 0 ? (
                   <Link
                     style={{ boxShadow: `none` }}
                     to={`${node.fields.slug}`}
                   >
-                    {title}
+                    {node.frontmatter.date} - {title}
                   </Link>
                 ) : (
-                  <span>{title}</span>
+                  <span>
+                    {node.frontmatter.date} - {title}
+                  </span>
                 )}
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p
+              </H3>
+
+              <Paragraph
                 dangerouslySetInnerHTML={{
                   __html: node.frontmatter.description || node.excerpt,
                 }}
@@ -68,7 +70,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "DD/MM/YY")
             title
             description
             contentType

@@ -1,9 +1,11 @@
 import React from "react"
 import styled from "styled-components"
 
-const Paragraph = props => <Element>{props.children}</Element>
+const Paragraph = ({ children, ...props }) => (
+  <StyledParagraph {...props}>{children}</StyledParagraph>
+)
 
-const Element = styled.p`
+export const StyledParagraph = styled.p`
   font-family: "Roboto slab", "sans-serif";
   font-size: 20px;
   line-height: 30px;
