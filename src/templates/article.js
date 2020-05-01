@@ -2,14 +2,20 @@ import React from "react"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import styled from "styled-components"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import H2 from "../components/h2"
 import H3 from "../components/h3"
+import { ParagraphStyles } from "../components/paragraph"
 
-const calculateH2 = post =>
+const getH2 = post =>
   post.frontmatter.contentType === "news" ? "NEWS" : "SONGS"
+
+const getH3 = post => {
+  const date =
+    post.frontmatter.contentType === "news" ? post.frontmatter.date + " - " : ""
+  return `${date}${post.frontmatter.title}`
+}
 
 const Article = props => {
   const post = props.data.mdx
@@ -26,12 +32,8 @@ const Article = props => {
         description={post.frontmatter.description || post.excerpt}
       />
 
-      <H2>{calculateH2(post)}</H2>
-      <H3>
-        {post.frontmatter.contentType === "news" && post.frontmatter.date}
-        {post.frontmatter.contentType === "news" && " - "}
-        {post.frontmatter.title}
-      </H3>
+      <H2>{getH2(post)}</H2>
+      <H3>{getH3(post)}</H3>
 
       <PageBody>
         <MDXRenderer>{post.body}</MDXRenderer>
@@ -42,11 +44,7 @@ const Article = props => {
 
 const PageBody = styled.div`
   p {
-    font-family: "Roboto slab", "sans-serif";
-    font-size: 20px;
-    line-height: 30px;
-    color: #616161;
-    max-width: 700px;
+    ${ParagraphStyles}
   }
 `
 

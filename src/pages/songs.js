@@ -1,18 +1,17 @@
 import React from "react"
 import { graphql } from "gatsby"
-
+import { MDXRenderer } from "gatsby-plugin-mdx"
+import styled from "styled-components"
 import Layout from "../components/layout"
 import H2 from "../components/h2"
 import H3 from "../components/h3"
 import SEO from "../components/seo"
-import { MDXRenderer } from "gatsby-plugin-mdx"
+import { ParagraphStyles } from "../components/paragraph"
 
 const Songs = props => {
   const { data } = props
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMdx.edges
-
-  console.log(posts)
 
   return (
     <Layout location={props.location} title={siteTitle}>
@@ -26,7 +25,9 @@ const Songs = props => {
           return (
             <div key={node.fields.slug}>
               <H3>{title}</H3>
-              <MDXRenderer>{node.body}</MDXRenderer>
+              <PageBody>
+                <MDXRenderer>{node.body}</MDXRenderer>
+              </PageBody>
             </div>
           )
         })}
@@ -34,6 +35,12 @@ const Songs = props => {
     </Layout>
   )
 }
+
+const PageBody = styled.div`
+  p {
+    ${ParagraphStyles}
+  }
+`
 
 export default Songs
 

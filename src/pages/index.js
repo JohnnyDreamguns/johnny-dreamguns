@@ -1,10 +1,12 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
+import { MDXRenderer } from "gatsby-plugin-mdx"
+import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import H2 from "../components/h2"
 import H3 from "../components/h3"
-import { MDXRenderer } from "gatsby-plugin-mdx"
+import { ParagraphStyles } from "../components/paragraph"
 
 const Index = props => {
   const { data } = props
@@ -26,7 +28,9 @@ const Index = props => {
                 {node.frontmatter.date} - {title}
               </H3>
 
-              <MDXRenderer>{node.body}</MDXRenderer>
+              <PageBody>
+                <MDXRenderer>{node.body}</MDXRenderer>
+              </PageBody>
             </div>
           )
         })}
@@ -34,6 +38,12 @@ const Index = props => {
     </Layout>
   )
 }
+
+const PageBody = styled.div`
+  p {
+    ${ParagraphStyles}
+  }
+`
 
 export default Index
 
