@@ -6,6 +6,7 @@ import H2 from "../components/h2"
 import H3 from "../components/h3"
 import Paragraph from "../components/paragraph"
 import SEO from "../components/seo"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
 const Songs = props => {
   const { data } = props
@@ -16,7 +17,7 @@ const Songs = props => {
 
   return (
     <Layout location={props.location} title={siteTitle}>
-      <SEO title="All posts" />
+      <SEO title="Songs" />
 
       <H2>SONGS</H2>
 
@@ -37,11 +38,7 @@ const Songs = props => {
                   <span>{title}</span>
                 )}
               </H3>
-              <Paragraph
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
+              <MDXRenderer>{node.frontmatter.body}</MDXRenderer>
             </div>
           )
         })}

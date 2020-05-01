@@ -8,6 +8,9 @@ import SEO from "../components/seo"
 import H2 from "../components/h2"
 import H3 from "../components/h3"
 
+const calculateH2 = post =>
+  post.frontmatter.contentType === "news" ? "NEWS" : "SONGS"
+
 const Article = props => {
   const post = props.data.mdx
   const siteTitle = props.data.site.siteMetadata.title
@@ -23,7 +26,7 @@ const Article = props => {
         description={post.frontmatter.description || post.excerpt}
       />
 
-      <H2>{post.frontmatter.contentType === "news" ? "NEWS" : "SONGS"}</H2>
+      <H2>{calculateH2(post)}</H2>
       <H3>
         {post.frontmatter.contentType === "news" && post.frontmatter.date}
         {post.frontmatter.contentType === "news" && " - "}

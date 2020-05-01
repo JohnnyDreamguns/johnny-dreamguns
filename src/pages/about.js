@@ -9,7 +9,7 @@ import Anchor from "../components/anchor"
 
 const About = props => (
   <Layout location={props.location} title="About">
-    <SEO title="All posts" />
+    <SEO title="About" />
 
     <div>
       <H2>ABOUT</H2>

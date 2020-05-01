@@ -13,7 +13,7 @@ const Index = props => {
 
   return (
     <Layout location={props.location} title={siteTitle}>
-      <SEO title="All posts" />
+      <SEO title="News" />
 
       <H2>NEWS</H2>
 

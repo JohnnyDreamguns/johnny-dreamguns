@@ -4,6 +4,9 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+import H2 from "../components/h2"
+import H3 from "../components/h3"
+
 const NotFoundPage = props => {
   const { data } = props
   const siteTitle = data.site.siteMetadata.title
@@ -11,8 +14,8 @@ const NotFoundPage = props => {
   return (
     <Layout location={props.location} title={siteTitle}>
       <SEO title="404: Not Found" />
-      <h1>Not Found</h1>
-      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+      <H2>Not Found</H2>
+      <H3>¯\_(ツ)_/¯</H3>
     </Layout>
   )
 }
