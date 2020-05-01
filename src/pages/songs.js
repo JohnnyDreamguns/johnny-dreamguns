@@ -1,10 +1,9 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import H2 from "../components/h2"
 import H3 from "../components/h3"
-import Paragraph from "../components/paragraph"
 import SEO from "../components/seo"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
@@ -26,19 +25,8 @@ const Songs = props => {
           const title = node.frontmatter.title || node.fields.slug
           return (
             <div key={node.fields.slug}>
-              <H3>
-                {node.frontmatter.description.length > 0 ? (
-                  <Link
-                    style={{ boxShadow: `none` }}
-                    to={`${node.fields.slug}`}
-                  >
-                    {title}
-                  </Link>
-                ) : (
-                  <span>{title}</span>
-                )}
-              </H3>
-              <MDXRenderer>{node.frontmatter.body}</MDXRenderer>
+              <H3>{title}</H3>
+              <MDXRenderer>{node.body}</MDXRenderer>
             </div>
           )
         })}
@@ -66,10 +54,10 @@ export const pageQuery = graphql`
           fields {
             slug
           }
+          body
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
-            description
           }
         }
       }

@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import H2 from "../components/h2"
 import H3 from "../components/h3"
-import Paragraph from "../components/paragraph"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
 const Index = props => {
   const { data } = props
@@ -23,25 +23,10 @@ const Index = props => {
           return (
             <div key={node.fields.slug}>
               <H3>
-                {node.frontmatter.description.length > 0 ? (
-                  <Link
-                    style={{ boxShadow: `none` }}
-                    to={`${node.fields.slug}`}
-                  >
-                    {node.frontmatter.date} - {title}
-                  </Link>
-                ) : (
-                  <span>
-                    {node.frontmatter.date} - {title}
-                  </span>
-                )}
+                {node.frontmatter.date} - {title}
               </H3>
 
-              <Paragraph
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
+              <MDXRenderer>{node.body}</MDXRenderer>
             </div>
           )
         })}
@@ -69,10 +54,10 @@ export const pageQuery = graphql`
           fields {
             slug
           }
+          body
           frontmatter {
             date(formatString: "DD/MM/YY")
             title
-            description
             contentType
           }
         }
