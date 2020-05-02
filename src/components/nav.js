@@ -83,7 +83,7 @@ const Wrapper = styled.nav`
 
   li:after {
     content: "|";
-    margin: 0 7px;
+    margin: 0 10px;
 
     @media (min-width: 450px) {
       margin: 0 20px;
