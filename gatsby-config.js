@@ -101,5 +101,12 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: "gatsby-plugin-mailchimp",
+      options: {
+        endpoint:
+          "https://johnnydreamguns.us8.list-manage.com/subscribe/post?u=8700a4c9acbc5427180d3a8a5&amp;id=4601a7b68d", // add your MC list endpoint here; see instructions below
+      },
+    },
   ],
 }

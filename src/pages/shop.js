@@ -15,7 +15,10 @@ const Shop = props => (
       <H2>SHOP</H2>
 
       <H3>On the Moon</H3>
-      <img src="https://theplaguedoctors.com/images/OnTheMoon-Medium.png" />
+      <img
+        alt="On the Moon album cover"
+        src="https://theplaguedoctors.com/images/OnTheMoon-Medium.png"
+      />
       <Paragraph>
         There's no Johnny Dreamguns albums yet, but in the meantime please check
         out{" "}
