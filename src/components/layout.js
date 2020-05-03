@@ -14,9 +14,11 @@ const Layout = props => {
         <MainContent>
           <main>{children}</main>
         </MainContent>
-        <StyledSideBar>
-          <MailingList />
-        </StyledSideBar>
+        {props.location.pathname !== "/mailing-list" && (
+          <StyledSideBar>
+            <MailingList />
+          </StyledSideBar>
+        )}
       </FlexContainer>
     </Wrapper>
   )
@@ -44,7 +46,7 @@ const StyledSideBar = styled(SideBar)`
   @media (min-width: 820px) {
     max-width: 300px;
     margin-top: 40px;
-    margin-right: 40px;
+    margin-right: 30px;
   }
 `
 

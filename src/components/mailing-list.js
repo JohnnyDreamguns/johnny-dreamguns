@@ -1,10 +1,11 @@
 import React, { useState } from "react"
+import styled from "styled-components"
 import addToMailchimp from "gatsby-plugin-mailchimp"
 import H3 from "./h3"
 import Paragraph from "./paragraph"
 import Form from "./form"
 
-const MailingList = () => {
+const MailingList = props => {
   const [formStatus, setFormStatus] = useState("showForm")
   const [email, setEmail] = useState("")
 
@@ -25,7 +26,7 @@ const MailingList = () => {
   }
 
   return (
-    <>
+    <div className={props.className}>
       <H3>MAILING LIST</H3>
       {formStatus === "showForm" && (
         <>
@@ -33,7 +34,7 @@ const MailingList = () => {
             Get an occasional update if there's a new song or exciting news
           </Paragraph>
 
-          <Form onSubmit={handleSubmit}>
+          <StyledForm onSubmit={handleSubmit}>
             <input
               placeholder="email address"
               type="text"
@@ -43,7 +44,7 @@ const MailingList = () => {
             />
 
             <button type="submit">Join</button>
-          </Form>
+          </StyledForm>
         </>
       )}
       {formStatus === "showSuccess" && (
@@ -59,8 +60,24 @@ const MailingList = () => {
           Sorry there was a problem adding that email address
         </Paragraph>
       )}
-    </>
+    </div>
   )
 }
+
+const StyledForm = styled(Form)`
+  input {
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: 820px) {
+    text-align: right;
+
+    input {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+`
 
 export default MailingList
