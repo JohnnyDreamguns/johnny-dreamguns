@@ -29,7 +29,7 @@ const InnerWrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  background: url(/images/spacebg-small.jpg) no-repeat;
+  background: url(/images/spacebg.jpg) no-repeat;
   min-height: 200px;
   min-width: 300px;
   background-position: top center;
@@ -37,8 +37,6 @@ const InnerWrapper = styled.div`
   max-width: 1200px;
 
   @media (min-width: 580px) and (min-height: 500px) {
-    background: url(/images/spacebg.jpg) no-repeat;
-    background-position: top center;
     min-height: 530px;
   }
 `
