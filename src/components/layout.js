@@ -28,11 +28,8 @@ const MainContent = styled.div`
 `
 
 const StyledSideBar = styled(SideBar)`
-  margin-top: 40px;
-  margin-right: 40px;
   padding: 30px 30px 30px 30px;
   background: #fff;
-  max-width: 300px;
 
   h3 {
     font-size: 18px;
@@ -41,6 +38,13 @@ const StyledSideBar = styled(SideBar)`
 
   p {
     font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  @media (min-width: 820px) {
+    max-width: 300px;
+    margin-top: 40px;
+    margin-right: 40px;
   }
 `
 
@@ -50,10 +54,13 @@ const Wrapper = styled.div`
 `
 
 const FlexContainer = styled.div`
-  display: flex;
   margin-left: auto;
   margin-right: auto;
   max-width: 1000px;
+
+  @media (min-width: 820px) {
+    display: flex;
+  }
 `
 
 export default Layout

@@ -30,8 +30,7 @@ const MailingList = () => {
       {formStatus === "showForm" && (
         <>
           <Paragraph>
-            Get an occasional update if there's a new song or exciting news, you
-            mostly won't hear from me
+            Get an occasional update if there's a new song or exciting news
           </Paragraph>
 
           <Form onSubmit={handleSubmit}>
