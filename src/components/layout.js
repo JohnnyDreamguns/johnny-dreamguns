@@ -14,7 +14,7 @@ const Layout = props => {
         <MainContent>
           <main>{children}</main>
         </MainContent>
-        {props.location.pathname !== "/mailing-list" && (
+        {props.location.pathname.indexOf("mailing-list") === -1 && (
           <StyledSideBar>
             <MailingList />
           </StyledSideBar>
