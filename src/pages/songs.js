@@ -37,6 +37,8 @@ const Songs = props => {
 }
 
 const PageBody = styled.div`
+  margin-bottom: 60px;
+
   p {
     ${ParagraphStyles}
   }
