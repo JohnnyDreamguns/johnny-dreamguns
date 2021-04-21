@@ -9,3 +9,5 @@ For anyone wondering where the next track is, Dreamguns has been temporarily out
 On top of this there have been many vocal maladies since the last recording, vocal range is currently down 35.7% and mucus production is up a nauseating 42.3%. Surgeons have been consulted, cameras have been thrust into nasal passages, waiting lists for non-emergency surgery have been incremented
 
 The next track exists in demo form, it will be called "You're gonna have to give me more than that Gordon", a story of oneirological miscommunication from beyond the grave
+
+![](assets/img_6116.jpg)
