@@ -10,4 +10,4 @@ On top of this there have been many vocal maladies since the last recording, voc
 
 The next track exists in demo form, it will be called "You're gonna have to give me more than that Gordon", a story of oneirological miscommunication from beyond the grave
 
-![](assets/img_6116.jpg)
+![](assets/img_61162.jpg)
